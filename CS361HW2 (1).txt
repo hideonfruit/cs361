@@ -1,0 +1,12 @@
+﻿Exercise 2: Generic stack of elements of type T
+Exercise 4: ILOAD, IINC, GOTO
+ILOAD: It is used to load an integer value from a local variable onto the stack. For instance, line 18 ILOAD 2, this command loads value of variable sum which is stored at index 2 on to the stack. Another one is at line 19 ILOAD 1, this command loads the value of the variable i stored at index 1 on to the stack. In the Java code this is for fetching the values of i and sum to perform the addition operation sum += i;.
+IINC: It is used to increment the value of a local variable. Line 24 IINC 1 1, this command increments the value of i stored at index 1 by 1. In the Java code it is the i++ part of the for loop.
+GOTO: It is used to jump to another location in the code. In line 14 GOTO L3, is used to jump to instruction label at L3, which continues the loop. In the Java code continuing the for loop until i exceeds n.
+Bytecode to Java: 
+Lines 5-6: ICONST_0 and ISTORE 1 is to initializing the variable i = 0.
+Lines 8-9: ICONST_0 and ISTORE 2 is to initializing the variable sum = 0.
+Line 14 (GOTO L3) skips to the comparison part of the loop.
+Line 18-21: ILOAD 2, ILOAD 1, IADD, and ISTORE 2 is the sum += i;, where the values of i and sum are added and stored back into sum.
+Line 24: IINC 1 1 is i++, incrementing i by 1.
+Lines 25-29: ILOAD 1, ILOAD 0, and IF_ICMPLE L4 correspond to checking if i <= n to continue the loop. If true, it jumps to label L4, which continues the loop body.
